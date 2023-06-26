@@ -31,6 +31,7 @@ header {
 }
 
 header a {
+    text-align: center;
     font-size: 30px;
     text-decoration: none;
     color: white;
@@ -45,12 +46,13 @@ a {
     grid-area: nav;
     margin-top: 30px;
     text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
 }
 
 .navigation a {
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin: 0px 5px;
     text-decoration: none;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -61,7 +63,7 @@ a {
 }
 
 .nav2>a {
-    padding: 7px 30px;
+    padding: 7px 25px;
     text-decoration: none;
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -93,14 +95,16 @@ span {
 }
 
 aside {
-    height: 500px;
+    height: 35vh;
     display: grid;
     grid-area: aside;
 }
 
 aside img {
+    animation: top-bottom 2s infinite ease alternate;
     display: grid;
     align-self: center;
+    height: 35vh;
 }
 
 form {
@@ -113,14 +117,16 @@ form {
         "sub"
     ;
 }
-
+input:focus{
+    outline: 0;
+}
 #nome {
     font-family: 'Poppins', sans-serif;
     border: none;
     font-size: 17px;
     grid-area: name;
     padding: 3px;
-    height: 50px;
+    height: 40px;
     border-radius: 15px;
 }
 
@@ -130,7 +136,7 @@ form {
     font-size: 17px;
     grid-area: email;
     padding: 3px;
-    height: 50px;
+    height: 40px;
     border-radius: 15px;
 }
 
@@ -155,6 +161,25 @@ form {
     background-color: rgb(160, 17, 226);
 }
 
+@keyframes top-bottom{
+    0%{
+        transform: translateY(10px);
+    }
+    100%{
+        transform: translateY(-10px);
+    }
+}
+
+@media screen and (min-width: 767px){
+
+    aside{
+        height: 50vh;
+    }
+
+    aside img{
+        height: 45vh;
+    }
+}
 @media screen and (min-width: 1024px) {
     .container {
         display: grid;
@@ -199,7 +224,9 @@ form {
         margin: auto;
         grid-area: aside;
     }
-
+    aside img{
+        height: 60vh;
+    }
     img {
         height: 500px;
     }
